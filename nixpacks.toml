@@ -1,8 +1,5 @@
 [phases.setup]
-nixPkgs = ["php", "phpExtensions.mysqli", "phpExtensions.pdo_mysql"]
-
-[phases.build]
-cmds = ["mkdir -p /app"]
+nixPkgs = ["php82", "php82Packages.mysqli"]
 
 [start]
-cmd = "php -S 0.0.0.0:8080"
+cmd = "php82 -S 0.0.0.0:8080"

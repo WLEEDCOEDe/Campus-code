@@ -4,7 +4,7 @@ $conn = mysqli_connect(
     getenv('MYSQLHOST'),
     getenv('MYSQLUSER'),
     getenv('MYSQLPASSWORD'),
-    getenv('MYSQLDATABASE'),
+    'my_project',
     getenv('MYSQLPORT')
 );
 

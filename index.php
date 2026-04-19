@@ -3,19 +3,19 @@
 include 'connection.php';
 
 // سحب عدد الدورات
-$courses_count_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM courses");
+$courses_count_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM my_project.courses");
 $courses_count = mysqli_fetch_assoc($courses_count_query)['total'];
 
 // سحب عدد الطلاب
-$users_count_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM users");
+$users_count_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM my_project.users");
 $users_count = mysqli_fetch_assoc($users_count_query)['total'];
 
 // سحب عدد المسارات
-$tracks_count_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM tracks");
+$tracks_count_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM my_project.tracks");
 $tracks_count = mysqli_fetch_assoc($tracks_count_query)['total'];
 
 // سحب المسارات مع عدد الدورات لكل مسار
-$tracks_query = mysqli_query($conn, "SELECT t.*, COUNT(c.id) as course_count FROM tracks t LEFT JOIN courses c ON t.id = c.track_id GROUP BY t.id");
+$tracks_query = mysqli_query($conn, "SELECT t.*, COUNT(c.id) as course_count FROM my_project.tracks t LEFT JOIN my_project.courses c ON t.id = c.track_id GROUP BY t.id");
 ?>
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">

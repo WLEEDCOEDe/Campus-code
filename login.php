@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $user['password'])) {
             // نجاح تسجيل الدخول: حفظ بيانات المستخدم في الجلسة
             $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_name'] = $user['name'];
+           $_SESSION['user_name'] = $user['email'];
             
             // 6. توجيه المستخدم لصفحة عرض الدورات (شغل المجموعة الثالثة)
             header("Location: display_courses.php");
